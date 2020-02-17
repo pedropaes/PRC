@@ -1,0 +1,370 @@
+@prefix : <http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2> .
+
+<http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#frequenta
+:frequenta rdf:type owl:ObjectProperty ;
+           owl:inverseOf :éfrequentadaPor ;
+           rdfs:domain :Aluno ;
+           rdfs:range :UC .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#leciona
+:leciona rdf:type owl:ObjectProperty ;
+         owl:inverseOf :éLecionadaPor ;
+         rdfs:domain :Professor ;
+         rdfs:range :UC .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#éLecionadaPor
+:éLecionadaPor rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#éfrequentadaPor
+:éfrequentadaPor rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#curso
+:curso rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#email
+:email rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#ident
+:ident rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Pessoa .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#nome
+:nome rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#Aluno
+:Aluno rdf:type owl:Class ;
+       rdfs:subClassOf :Pessoa .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#Professor
+:Professor rdf:type owl:Class ;
+           rdfs:subClassOf :Pessoa .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#UC
+:UC rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a33524
+:a33524 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a33524"^^xsd:string ;
+        :nome "Pedro Paes"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a61032
+:a61032 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a61032"^^xsd:string ;
+        :nome "Tiago Pereira"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a63129
+:a63129 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a63129"^^xsd:string ;
+        :nome "José Freitas"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a67713
+:a67713 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a67713"^^xsd:string ;
+        :nome "Manuel Moreno"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a70922
+:a70922 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a70922"^^xsd:string ;
+        :nome "Francisco Costa"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a71385
+:a71385 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a71385"^^xsd:string ;
+        :nome "Bruno Silva"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a71940
+:a71940 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a71940"^^xsd:string ;
+        :nome "Eduardo Cunha"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a72187
+:a72187 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a72187"^^xsd:string ;
+        :nome "José Lima"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a74036
+:a74036 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a74036"^^xsd:string ;
+        :nome "Manuel Monteiro"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a74264
+:a74264 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a74264"^^xsd:string ;
+        :nome "Rafael Silva"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a74568
+:a74568 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a74568"^^xsd:string ;
+        :nome "Ricardo Canela"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a74658
+:a74658 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a74658"^^xsd:string ;
+        :nome "Rui Vieira"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a75328
+:a75328 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a75328"^^xsd:string ;
+        :nome "Tiago Baptista"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a75411
+:a75411 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a75411"^^xsd:string ;
+        :nome "Ricardo Leal"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a75536
+:a75536 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a75536"^^xsd:string ;
+        :nome "Eduardo Araújo"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a75569
+:a75569 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a75569"^^xsd:string ;
+        :nome "João Leal"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a76516
+:a76516 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a76516"^^xsd:string ;
+        :nome "João Vieira"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a77045
+:a77045 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a77045"^^xsd:string ;
+        :nome "Ricardo Pereira"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a78764
+:a78764 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a78764"^^xsd:string ;
+        :nome "Ricardo Neves"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a78914
+:a78914 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a78914"^^xsd:string ;
+        :nome "Ricardo Martins"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a78997
+:a78997 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a78997"^^xsd:string ;
+        :nome "Bruno Sousa"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a79947
+:a79947 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a79947"^^xsd:string ;
+        :nome "Rui Costa"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a80424
+:a80424 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a80424"^^xsd:string ;
+        :nome "José Carvalho"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a80757
+:a80757 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a80757"^^xsd:string ;
+        :nome "Jaime Leite"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a80874
+:a80874 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a80874"^^xsd:string ;
+        :nome "João Pimentel"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a81712
+:a81712 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a81712"^^xsd:string ;
+        :nome "Ana Filipa Pereira"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a82324
+:a82324 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a82324"^^xsd:string ;
+        :nome "Carlos Barbosa"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#a82617
+:a82617 rdf:type owl:NamedIndividual ,
+                 :Pessoa ;
+        :frequenta :prc ;
+        :ident "a82617"^^xsd:string ;
+        :nome "Shahzod Yusupov"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#jcr
+:jcr rdf:type owl:NamedIndividual ,
+              :Pessoa ;
+     :leciona :prc ;
+     :ident "A11111"^^xsd:string ;
+     :nome "José Carlos Ramalho"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#pg17918
+:pg17918 rdf:type owl:NamedIndividual ,
+                  :Pessoa ;
+         :frequenta :prc ;
+         :ident "pg17918"^^xsd:string ;
+         :nome "Paulo Martins"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#pg33874
+:pg33874 rdf:type owl:NamedIndividual ,
+                  :Pessoa ;
+         :frequenta :prc ;
+         :ident "pg33874"^^xsd:string ;
+         :nome "João Grenhas"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#pg37149
+:pg37149 rdf:type owl:NamedIndividual ,
+                  :Pessoa ;
+         :frequenta :prc ;
+         :ident "pg37149"^^xsd:string ;
+         :nome "Diego Silva"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#pg38415
+:pg38415 rdf:type owl:NamedIndividual ,
+                  :Pessoa ;
+         :frequenta :prc ;
+         :ident "pg38415"^^xsd:string ;
+         :nome "Henrique Ribeiro"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#pg39292
+:pg39292 rdf:type owl:NamedIndividual ,
+                  :Pessoa ;
+         :frequenta :prc ;
+         :ident "pg39292"^^xsd:string ;
+         :nome "Maria Pinto"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#pg41089
+:pg41089 rdf:type owl:NamedIndividual ,
+                  :Pessoa ;
+         :frequenta :prc ;
+         :ident "pg41089"^^xsd:string ;
+         :nome "Miguel Dias"^^xsd:string .
+
+
+###  http://www.semanticweb.org/pedro/ontologies/2020/1/untitled-ontology-2#prc
+:prc rdf:type owl:NamedIndividual ,
+              :UC ;
+     :nome "Processamento e Representação de Conhecimento"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
