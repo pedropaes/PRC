@@ -1,0 +1,27 @@
+--Query 1
+select count(distinct ?p)  where {
+   [] dbo:nationality ?p .
+   ?p a dbo:Country .
+   filter not exists {
+      ?p dbo:dissolutionYear ?d .   
+   } 
+} 
+
+--Query 2
+select count(distinct ?p)  where {
+   ?p dbo:nationality ?c .
+   ?c foaf:name "Barbados"@en .
+} 
+
+--Query 4
+select count (distinct ?p) where{
+?p a dbo:Actor
+}
+
+--Query 5
+select distinct ?fnome where{
+?p a dbo:Actor.
+?p foaf:name "Christopher Lambert"@en.
+?f dbo:starring ?p.
+?f foaf:name ?fnome
+}

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .w3-container
+  table.w3-table
+    tr
+        th Query
+        th Resultado
+    tr
+        td
+            div
+                form(action='/repos/'+id method="post")
+                    textarea(type="text" placeholder="SPARQL Query"  name="text" rows="10" cols="50")
+                    p
+                        button(type="submit" value="submit" class="btn btn-success green")
+                            a  Query
+        td
+            textarea(type="text" placeholder="Resultado"  name="text" rows="10" cols="50")
+                if result
+                    #{result}

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Repositórios
+  .w3-container
+  table.w3-table
+    tr
+      th Id
+      th Título
+    each r in repos
+      tr
+        td= r.id
+        td
+          a(href='/repos/'+r.id) #{r.title}

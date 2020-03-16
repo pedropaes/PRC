@@ -1,0 +1,290 @@
+@prefix : <http://www.pedro.com/2020/loja#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.pedro.com/2020/loja> .
+
+<http://www.pedro.com/2020/loja> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.pedro.com/2020/loja#compra
+:compra rdf:type owl:ObjectProperty ;
+        owl:inverseOf :éCompradoPor ;
+        rdfs:domain :Cliente ;
+        rdfs:range :Produto .
+
+
+###  http://www.pedro.com/2020/loja#vende
+:vende rdf:type owl:ObjectProperty ;
+       owl:inverseOf :éVendidoPor ;
+       rdfs:domain :Loja ;
+       rdfs:range :Produto .
+
+
+###  http://www.pedro.com/2020/loja#éCompradoPor
+:éCompradoPor rdf:type owl:ObjectProperty .
+
+
+###  http://www.pedro.com/2020/loja#éVendidoPor
+:éVendidoPor rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.pedro.com/2020/loja#código
+:código rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Produto .
+
+
+###  http://www.pedro.com/2020/loja#designação
+:designação rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain :Produto .
+
+
+###  http://www.pedro.com/2020/loja#email
+:email rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Cliente ,
+                   :Loja .
+
+
+###  http://www.pedro.com/2020/loja#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Cliente ,
+                  :Loja ,
+                  :LojaGrande .
+
+
+###  http://www.pedro.com/2020/loja#preço
+:preço rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Produto .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.pedro.com/2020/loja#Cliente
+:Cliente rdf:type owl:Class ;
+         rdfs:subClassOf :CompraVenda ;
+         owl:disjointWith :Produto .
+
+
+###  http://www.pedro.com/2020/loja#CompraVenda
+:CompraVenda rdf:type owl:Class .
+
+
+###  http://www.pedro.com/2020/loja#Loja
+:Loja rdf:type owl:Class ;
+      rdfs:subClassOf :CompraVenda .
+
+
+###  http://www.pedro.com/2020/loja#LojaGrande
+:LojaGrande rdf:type owl:Class ;
+            rdfs:subClassOf :Loja .
+
+
+###  http://www.pedro.com/2020/loja#Produto
+:Produto rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.pedro.com/2020/loja#bruno
+:bruno rdf:type owl:NamedIndividual ,
+                :Cliente ,
+                :CompraVenda ,
+                :Loja ,
+                :LojaGrande ;
+       :compra :desinfectante ;
+       :email "bruno@bruno.pt"^^xsd:string ;
+       :nome "Bruno"^^xsd:string .
+
+
+###  http://www.pedro.com/2020/loja#continente
+:continente rdf:type owl:NamedIndividual ,
+                     :Cliente ,
+                     :CompraVenda ,
+                     :Loja ,
+                     :LojaGrande ;
+            :vende :p10 ,
+                   :p6 ,
+                   :p7 ,
+                   :p8 ,
+                   :p9 ,
+                   :papelHigienico ;
+            :email "geral@continente.pt"^^xsd:string ;
+            :nome "Continente"^^xsd:string .
+
+
+###  http://www.pedro.com/2020/loja#desinfectante
+:desinfectante rdf:type owl:NamedIndividual ,
+                        :Produto ;
+               :éCompradoPor :bruno ;
+               :éVendidoPor :mercadona ;
+               :código "2"^^xsd:string ;
+               :designação "Desinfectante"^^xsd:string ;
+               :preço "50.0"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#donaBelmira
+:donaBelmira rdf:type owl:NamedIndividual ,
+                      :Cliente ,
+                      :CompraVenda ,
+                      :Loja ,
+                      :LojaGrande ;
+             :email "geral@donabelmira.pt"^^xsd:string ;
+             :nome "Loja Dona Belmira"^^xsd:string .
+
+
+###  http://www.pedro.com/2020/loja#farmaciaCovid
+:farmaciaCovid rdf:type owl:NamedIndividual ,
+                        :Cliente ,
+                        :CompraVenda ,
+                        :Loja ,
+                        :LojaGrande ;
+               :vende :mascara ;
+               :email "geral@farmacia.pt"^^xsd:string ;
+               :nome "Farmácia Covide"^^xsd:string .
+
+
+###  http://www.pedro.com/2020/loja#joao
+:joao rdf:type owl:NamedIndividual ,
+               :Cliente ,
+               :CompraVenda ,
+               :Loja ,
+               :LojaGrande ;
+      :compra :papelHigienico ;
+      :email "joao@hotmail.com"^^xsd:string ;
+      :nome "João"^^xsd:string .
+
+
+###  http://www.pedro.com/2020/loja#luis
+:luis rdf:type owl:NamedIndividual ,
+               :Cliente ,
+               :CompraVenda ,
+               :Loja ,
+               :LojaGrande ;
+      :compra :picanha ;
+      :email "luis@luis.pt"^^xsd:string ;
+      :nome "Luís"^^xsd:string .
+
+
+###  http://www.pedro.com/2020/loja#mascara
+:mascara rdf:type owl:NamedIndividual ,
+                  :Produto ;
+         :éCompradoPor :pedro ;
+         :éVendidoPor :farmaciaCovid ;
+         :código "3"^^xsd:string ;
+         :designação "Máscara"^^xsd:string ;
+         :preço "20.0"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#mercadona
+:mercadona rdf:type owl:NamedIndividual ,
+                    :Cliente ,
+                    :CompraVenda ,
+                    :Loja ,
+                    :LojaGrande ;
+           :vende :desinfectante ;
+           :email "geral@mercadona.pt"^^xsd:string ;
+           :nome "Mercadona" .
+
+
+###  http://www.pedro.com/2020/loja#p10
+:p10 rdf:type owl:NamedIndividual ,
+              :Produto ;
+     :éVendidoPor :continente ;
+     :código "10"^^xsd:string ;
+     :designação "p10"^^xsd:string ;
+     :preço "99.45"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#p6
+:p6 rdf:type owl:NamedIndividual ,
+             :Produto ;
+    :éVendidoPor :continente ;
+    :código "6"^^xsd:string ;
+    :designação "p6"^^xsd:string ;
+    :preço "99.45"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#p7
+:p7 rdf:type owl:NamedIndividual ,
+             :Produto ;
+    :éVendidoPor :continente ;
+    :código "7"^^xsd:string ;
+    :designação "p7"^^xsd:string ;
+    :preço "99.45"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#p8
+:p8 rdf:type owl:NamedIndividual ,
+             :Produto ;
+    :éVendidoPor :continente ;
+    :código "8"^^xsd:string ;
+    :designação "p8"^^xsd:string ;
+    :preço "99.45"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#p9
+:p9 rdf:type owl:NamedIndividual ,
+             :Produto ;
+    :éVendidoPor :continente ;
+    :código "9"^^xsd:string ;
+    :designação "p9"^^xsd:string ;
+    :preço "99.45"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#papelHigienico
+:papelHigienico rdf:type owl:NamedIndividual ,
+                         :Produto ;
+                :éCompradoPor :joao ;
+                :éVendidoPor :continente ;
+                :código "1"^^xsd:string ;
+                :designação "Papel Higienico"^^xsd:string ;
+                :preço "21.45"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#pedro
+:pedro rdf:type owl:NamedIndividual ,
+                :Cliente ,
+                :CompraVenda ,
+                :Loja ,
+                :LojaGrande ;
+       :compra :mascara ;
+       :email "pedro@mail.pt"^^xsd:string ;
+       :nome "Pedro"^^xsd:string .
+
+
+###  http://www.pedro.com/2020/loja#picanha
+:picanha rdf:type owl:NamedIndividual ,
+                  :Produto ;
+         :éCompradoPor :luis ;
+         :éVendidoPor :talho ;
+         :código "4"^^xsd:string ;
+         :designação "Picanha"^^xsd:string ;
+         :preço "60.0"^^xsd:float .
+
+
+###  http://www.pedro.com/2020/loja#talho
+:talho rdf:type owl:NamedIndividual ,
+                :Cliente ,
+                :CompraVenda ,
+                :Loja ,
+                :LojaGrande ;
+       :vende :picanha ;
+       :email "geral@talho.pt"^^xsd:string ;
+       :nome "Talho da Esquina"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,0 +1,28 @@
+1) Que lojas vendem o produto A?
+PREFIX : <http://www.pedro.com/2020/loja#>
+select ?nome where{
+    :papelHigienico a :Produto .
+	?l a :Loja .
+    ?l :vende :p7 .
+	?l :nome ?nome
+}
+
+
+2) Que produtos são comprados pelo cliente X?
+PREFIX : <http://www.pedro.com/2020/loja#>
+select ?produto where{
+    :bruno a :Cliente .
+	?p a :Produto .
+    ?p :éCompradoPor :bruno .
+	?p :designação ?produto
+}
+
+3) Quem são os potenciais clientes da loja Y?
+PREFIX : <http://www.pedro.com/2020/loja#>
+select distinct ?cliente where {
+    :continente a :Loja .
+    :continente :vende ?produto .
+    ?c :compra ?produto .
+    ?c a :Cliente .
+    ?c :nome ?cliente .
+}
