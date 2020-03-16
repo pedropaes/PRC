@@ -1,0 +1,5 @@
+select distinct ?name ?gender where{
+   ?p a dbo:Swimmer.
+   ?p foaf:name ?name.
+   ?p foaf:gender ?gender.
+}
