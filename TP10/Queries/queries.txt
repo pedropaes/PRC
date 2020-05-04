@@ -1,0 +1,50 @@
+==============Tios====================
+select distinct ?tio ?sobrinho where {
+   ?b :name ?tio .
+   ?b :sex "M".
+   ?a :hasSibling ?b .
+    filter(?a != ?b)
+   ?b :hasChild ?c .
+   ?c :name ?sobrinho .
+}
+
+
+==============Tias====================
+select distinct ?tia ?sobrinho where {
+   ?b :name ?tia .
+   ?b :sex "F".
+   ?a :hasSibling ?b .
+    filter(?a != ?b)
+   ?b :hasChild ?c .
+   ?c :name ?sobrinho .
+}
+
+=============Sobrinhos================
+select distinct ?primoA ?primoB where {
+   ?a a :Person .
+   ?a :hasChild ?c .
+   ?c :name ?primoA.
+   ?a :hasSibling ?b .
+    filter(?a != ?b)
+   ?b :hasChild ?d .
+   ?d :name ?primoB .
+}
+
+=============Ancestrais================
+
+select distinct ?person ?ancestor where {
+    ?p a :Person .
+    ?p :name ?person.
+    ?p :hasParent+ ?a .
+    ?a :name ?ancestor.
+}
+
+=============Descendentes================
+
+select distinct ?person ?descendent where {
+    ?p a :Person .
+    ?p :name ?person.
+    ?p :hasChild+ ?a .
+    ?a :name ?descendent.
+}
+
